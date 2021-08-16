@@ -6,25 +6,25 @@ import gallery5 from '../assets/images/gallery5.png';
 
 const imagesContainer = [
     {
-        label: 'Image1',
+        alt: 'Image1',
         path: gallery1
     },
     {
-        label: 'Image2',
+        alt: 'Image2',
         path: gallery2
     },
     {
-        label: 'Image3',
+        alt: 'Image3',
         path: gallery3
     },
     {
-        label: 'Image4',
+        alt: 'Image4',
         path: gallery4
     },
     {
-        label: 'Image5',
+        alt: 'Image5',
         path: gallery5
     }
 ];
 
-export default imagesContainer
+export default imagesContainer;

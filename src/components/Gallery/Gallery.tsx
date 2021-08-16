@@ -1,5 +1,6 @@
 import { useState } from 'react';
-import { StyledSectionTitle, StyledDot } from '../shared';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { StyledSectionTitle, StyledDot, NextImage } from '../shared';
 import galleryImagesContainer from '../../utils/galleryImagesContainer';
 import * as s from './StyledGallery';
 
@@ -13,28 +14,32 @@ const Gallery = () => {
                 <s.StyledText>Больше работ смотрите в нашем INSTAGRAM</s.StyledText>
                 <s.StyledIcon></s.StyledIcon>
             </s.StyledHeaderContainer>
-
-            {/* <s.StyledGalleryList>
-                {galleryImagesContainer.map(({ label, path }) => {
-                    <s.StyledGalleryListItem key={label}>
-                        <s.StyledImage src={path} />
-                    </s.StyledGalleryListItem>;
-                })}
-            </s.StyledGalleryList> */}
-            {/* <s.StyledImage
-                src={galleryImagesContainer[currentImageIndex].path}
-                // label={galleryImagesContainer[currentImageIndex].label}
-            /> */}
-
-            <s.StyledDotsList>
-                {galleryImagesContainer.map((_, idx) => {
-                    return (
-                        <s.StyledDotItem key={idx}>
-                            <StyledDot active={currentImageIndex === idx} />
-                        </s.StyledDotItem>
-                    );
-                })}
-            </s.StyledDotsList>
+            <s.SwiperContainer>
+                <Swiper
+                    // centeredSlides={true}
+                    spaceBetween={300}
+                    slidesPerView={1}
+                    onSlideChange={data => setIndex(data.activeIndex)}
+                    onSwiper={swiper => console.log(swiper)}
+                >
+                    {galleryImagesContainer.map(({ path, alt }) => {
+                        return (
+                            <SwiperSlide key={alt}>
+                                <NextImage src={path} alt={alt} />
+                            </SwiperSlide>
+                        );
+                    })}
+                </Swiper>
+                <s.StyledDotsList>
+                    {galleryImagesContainer.map((_, idx) => {
+                        return (
+                            <s.StyledDotItem key={idx}>
+                                <StyledDot active={currentImageIndex === idx} />
+                            </s.StyledDotItem>
+                        );
+                    })}
+                </s.StyledDotsList>
+            </s.SwiperContainer>
         </s.StyledContainer>
     );
 };
