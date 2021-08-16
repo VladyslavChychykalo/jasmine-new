@@ -1,25 +1,29 @@
 import { useState } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { StyledSectionTitle, StyledDot, NextImage } from '../shared';
+import { StyledSectionTitle, StyledDot, NextImage, Icon } from '../shared';
 import galleryImagesContainer from '../../utils/galleryImagesContainer';
+import sprite from 'assets/icons/sprite.svg';
 import * as s from './StyledGallery';
+
+const value = "icon-Instagram"
 
 const Gallery = () => {
     const [currentImageIndex, setIndex] = useState(0);
 
     return (
         <s.StyledContainer>
-            <div style={{
-                margin: '0 auto',
-                maxWidth: '375px'
-            }}>
+            <div
+                style={{
+                    margin: '0 auto',
+                    maxWidth: '323px'
+                }}
+            >
                 <StyledSectionTitle>Наши работы</StyledSectionTitle>
                 <s.StyledHeaderContainer>
                     <s.StyledText>Больше работ смотрите в нашем INSTAGRAM</s.StyledText>
-                    {/* <s.StyledIcon></s.StyledIcon> */}
+                    <Icon name="icon-Instagram" />
                 </s.StyledHeaderContainer>
                 <Swiper
-                    // centeredSlides={true}
                     spaceBetween={300}
                     slidesPerView={1}
                     onSlideChange={data => setIndex(data.activeIndex)}

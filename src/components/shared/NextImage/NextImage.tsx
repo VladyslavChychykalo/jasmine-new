@@ -7,7 +7,7 @@ const NextImage: React.FC<{ src: string; alt: string; width?: number; height?: n
     height = 403
 }) => (
     <div style={{ position: 'relative', width: '100%', maxWidth: '375px', height: '403px', margin: '0 auto' }}>
-        <Image alt='Mountains' src={src} layout='fill' objectFit='contain' />
+        <Image alt={alt} src={src} objectFit="cover" layout="fill" />
     </div>
 );
 

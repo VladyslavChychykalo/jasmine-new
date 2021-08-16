@@ -8,6 +8,7 @@ const StyledSectionTitle = styled.p`
     line-height: 22px;
     letter-spacing: 0.25em;
     color: ${() => COLORS.green};
+    margin-bottom: 25px;
 `;
 
 export default StyledSectionTitle;

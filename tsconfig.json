@@ -24,7 +24,8 @@
     "**/*.ts",
     "**/*.tsx",
     "./src/types/images.d.ts",
-    "src"
+    "src",
+    "src/custom.d.ts"
   ],
   "exclude": [
     "node_modules"

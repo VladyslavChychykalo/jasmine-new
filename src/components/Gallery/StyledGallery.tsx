@@ -12,17 +12,18 @@ export const StyledText = styled.p`
     line-height: 20px;
     color: ${() => COLORS.green};
     letter-spacing: 0.2em;
+    margin-right: 30px;
 `;
 
-export const StyledIcon = styled.svg``;
-
-export const StyledHeaderContainer = styled.div``;
-
-export const StyledGalleryList = styled.ul``;
-
-export const StyledGalleryListItem = styled.li``;
+export const StyledHeaderContainer = styled.div`
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 25px;
+`;
 
 export const StyledDotsList = styled.ul`
+    margin-top: 25px;
     display: flex;
     justify-content: center;
     list-style: none;
