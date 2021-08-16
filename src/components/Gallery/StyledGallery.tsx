@@ -9,7 +9,7 @@ export const StyledContainer = styled.div`
 
 export const SwiperContainer = styled.div`
     margin: 0 auto;
-    width: 323px;
+    /* width: 323px; */
 `;
 
 export const StyledText = styled.p``;

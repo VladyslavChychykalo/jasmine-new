@@ -9,12 +9,12 @@ const Gallery = () => {
 
     return (
         <s.StyledContainer>
-            <StyledSectionTitle>НАШИ РАБОТЫ</StyledSectionTitle>
+            {/* <StyledSectionTitle>НАШИ РАБОТЫ</StyledSectionTitle>
             <s.StyledHeaderContainer>
                 <s.StyledText>Больше работ смотрите в нашем INSTAGRAM</s.StyledText>
                 <s.StyledIcon></s.StyledIcon>
-            </s.StyledHeaderContainer>
-            <s.SwiperContainer>
+            </s.StyledHeaderContainer> */}
+            {/* <s.SwiperContainer> */}
                 <Swiper
                     // centeredSlides={true}
                     spaceBetween={300}
@@ -39,7 +39,7 @@ const Gallery = () => {
                         );
                     })}
                 </s.StyledDotsList>
-            </s.SwiperContainer>
+            {/* </s.SwiperContainer> */}
         </s.StyledContainer>
     );
 };

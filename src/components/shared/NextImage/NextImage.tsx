@@ -5,6 +5,10 @@ const NextImage: React.FC<{ src: string; alt: string; width?: number; height?: n
     alt,
     width = 323,
     height = 403
-}) => <Image src={src} width={width} height={height} alt={alt} />;
+}) => (
+    <div style={{ position: 'relative', width: '100%', maxWidth: '323px', height: '500px', margin: '0 auto' }}>
+        <Image alt='Mountains' src={src} layout='fill' objectFit='contain' />
+    </div>
+);
 
 export default NextImage;
