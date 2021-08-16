@@ -2,10 +2,7 @@ import { useState } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { StyledSectionTitle, StyledDot, NextImage, Icon } from '../shared';
 import galleryImagesContainer from '../../utils/galleryImagesContainer';
-import sprite from 'assets/icons/sprite.svg';
 import * as s from './StyledGallery';
-
-const value = "icon-Instagram"
 
 const Gallery = () => {
     const [currentImageIndex, setIndex] = useState(0);
