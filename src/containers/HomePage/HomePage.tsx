@@ -4,7 +4,9 @@ import Gallery from '../../components/Gallery';
 
 const HomePage = () => {
     return (
-        <div>
+        <div style={{
+            // padding: '0 26px'
+        }}>
             <Header />
             <AboutUs />
             <Gallery />

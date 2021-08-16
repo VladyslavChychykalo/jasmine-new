@@ -1,18 +1,18 @@
 import styled from 'styled-components';
+import { COLORS } from 'styles/colors';
 
-export const StyledContainer = styled.div`
-    /* display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center; */
+export const StyledContainer = styled.section`
+    background-color: ${() => COLORS.desert};
+    padding: 46px 26px 53px;
 `;
 
-export const SwiperContainer = styled.div`
-    margin: 0 auto;
-    /* width: 323px; */
+export const StyledText = styled.p`
+    font-family: 'Lato';
+    font-size: 14px;
+    line-height: 20px;
+    color: ${() => COLORS.green};
+    letter-spacing: 0.2em;
 `;
-
-export const StyledText = styled.p``;
 
 export const StyledIcon = styled.svg``;
 
