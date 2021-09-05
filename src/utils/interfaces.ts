@@ -6,10 +6,11 @@ export interface TeamI {
   name: string;
   experience: number;
   profession: string;
+  alt: string;
 }
 
 export interface SelectI {
   id: string;
   selectName: string;
-  team?: TeamI[];
+  team: TeamI[];
 }

@@ -1,6 +1,7 @@
 import Header from '../../components/Header';
 import AboutUs from '../../components/AboutUs';
 import Gallery from '../../components/Gallery';
+import Team from '../../components/Team';
 
 const HomePage = () => {
     return (
@@ -10,6 +11,7 @@ const HomePage = () => {
             <Header />
             <AboutUs />
             <Gallery />
+            <Team />
         </div>
     );
 };

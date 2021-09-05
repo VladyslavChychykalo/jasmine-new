@@ -1,3 +1,4 @@
+import { SetStateAction, useState } from "react";
 import styled from "styled-components";
 import { SelectI } from "../../../utils/interfaces";
 
@@ -6,16 +7,27 @@ const CustomSelect = styled.div``;
 const CustomOptions = styled.div``;
 
 const StyledSelect: React.FC<{
-  isSelected: boolean;
+  currentOption: SelectI;
   options: SelectI[];
-  onChangeOption: () => null;
-}> = ({ isSelected, options, onChangeOption }) => {
+  setCurrentOption: React.Dispatch<SetStateAction<SelectI>>;
+}> = ({ currentOption, options, setCurrentOption }) => {
+  const [isSelected, setSelect] = useState(false);
+
+  const onChangeOption = (newOption: SelectI) => {
+    setCurrentOption(newOption);
+    setSelect(false)
+  };
+
   return (
     <div>
-      <CustomSelect></CustomSelect>
+      <CustomSelect onClick={() => setSelect((prev) => !prev)}>
+        {currentOption.selectName}
+      </CustomSelect>
       {isSelected &&
-        options.map((el: SelectI) => (
-          <CustomOptions onClick={onChangeOption}></CustomOptions>
+        options.map((option: SelectI) => (
+          <CustomOptions onClick={() => onChangeOption(option)}>
+            {option.selectName}
+          </CustomOptions>
         ))}
     </div>
   );
