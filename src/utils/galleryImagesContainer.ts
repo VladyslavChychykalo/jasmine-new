@@ -1,8 +1,8 @@
-import gallery1 from '../assets/images/gallery1.png';
-import gallery2 from '../assets/images/gallery2.png';
-import gallery3 from '../assets/images/gallery3.png';
-import gallery4 from '../assets/images/gallery4.png';
-import gallery5 from '../assets/images/gallery5.png';
+import gallery1 from '../assets/images/gallery/gallery1.png';
+import gallery2 from '../assets/images/gallery/gallery2.png';
+import gallery3 from '../assets/images/gallery/gallery3.png';
+import gallery4 from '../assets/images/gallery/gallery4.png';
+import gallery5 from '../assets/images/gallery/gallery5.png';
 
 const imagesContainer = [
     {
