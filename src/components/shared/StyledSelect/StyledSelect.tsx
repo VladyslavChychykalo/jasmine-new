@@ -1,21 +1,21 @@
 import { SetStateAction, useState } from "react";
 import styled from "styled-components";
-import { SelectI } from "../../../utils/interfaces";
+import { SelectTeamI, SelectPriceI } from "../../../utils/interfaces";
 
 const CustomSelect = styled.div``;
 
 const CustomOptions = styled.div``;
 
 const StyledSelect: React.FC<{
-  currentOption: SelectI;
-  options: SelectI[];
-  setCurrentOption: React.Dispatch<SetStateAction<SelectI>>;
+  currentOption: SelectTeamI | SelectPriceI;
+  options: SelectTeamI[] | SelectPriceI[];
+  setCurrentOption: React.Dispatch<SetStateAction<SelectTeamI | SelectPriceI>>;
 }> = ({ currentOption, options, setCurrentOption }) => {
   const [isSelected, setSelect] = useState(false);
 
-  const onChangeOption = (newOption: SelectI) => {
+  const onChangeOption = (newOption: SelectTeamI | SelectPriceI) => {
     setCurrentOption(newOption);
-    setSelect(false)
+    setSelect(false);
   };
 
   return (
@@ -24,7 +24,7 @@ const StyledSelect: React.FC<{
         {currentOption.selectName}
       </CustomSelect>
       {isSelected &&
-        options.map((option: SelectI) => (
+        options.map((option: SelectTeamI | SelectPriceI) => (
           <CustomOptions onClick={() => onChangeOption(option)}>
             {option.selectName}
           </CustomOptions>

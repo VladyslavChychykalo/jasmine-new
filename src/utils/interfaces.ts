@@ -9,8 +9,27 @@ export interface TeamI {
   alt: string;
 }
 
-export interface SelectI {
+export interface SelectTeamI {
   id: string;
   selectName: string;
-  team: TeamI[];
+  team?: TeamI[];
+}
+
+export interface SubCategorieI {
+  id: string;
+  subCategorie: string;
+  services?:
+    | {
+        id: string;
+        serviceName: string;
+        servicePrice: string;
+      }[]
+    | string
+    | any;
+}
+
+export interface SelectPriceI {
+  id: string;
+  selectName: string;
+  subCategories: SubCategorieI[];
 }

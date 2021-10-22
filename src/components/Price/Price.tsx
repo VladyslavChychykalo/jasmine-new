@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import {
   StyledSectionTitle,
@@ -6,21 +6,18 @@ import {
   StyledDot,
   NextImage,
 } from "../shared";
-import { SelectTeamI } from "../../utils/interfaces";
-import teamContainer from "../../utils/teamContainer";
-import * as s from "./StyledTeam";
+import { SelectPriceI, SelectTeamI } from "../../utils/interfaces";
+import { wemanRoom, manRoom, childRoom } from "../../utils/priceContainer";
+import * as s from "./StyledPrice";
 
 const Team = () => {
-  const [currentOption, setCurrentOption] = useState<SelectTeamI>(
-    teamContainer[0]
+  const [currentOption, setCurrentOption] = useState<SelectPriceI>(
+    wemanRoom[0]
   );
-  const [currentImageIndex, setIndex] = useState(0);
+  const [currentCategory, setCurrentCategory] = useState(null);
+  // const [currentImageIndex, setIndex] = useState(0);
 
-  // useEffect(() => {
-  //   console.log('state')
-  //   setIndex(0)
-  // }, [currentOption])
-
+  console.log(currentCategory);
   return (
     <s.StyledContainer>
       <div
@@ -29,13 +26,24 @@ const Team = () => {
           maxWidth: "323px",
         }}
       >
-        <StyledSectionTitle>Мастера</StyledSectionTitle>
+        <StyledSectionTitle>Наши услуги и цены</StyledSectionTitle>
         <StyledSelect
           currentOption={currentOption}
-          options={teamContainer}
+          options={wemanRoom}
           setCurrentOption={setCurrentOption}
         />
-        <Swiper
+        <Swiper slidesPerView={1.5} spaceBetween={48} freeMode={true}>
+          {currentOption.subCategories.map((el) => {
+            return (
+              <SwiperSlide>
+                <p onClick={() => setCurrentCategory(el)}>{el.subCategorie}</p>
+              </SwiperSlide>
+            );
+          })}
+        </Swiper>
+        <Swiper></Swiper>
+        {/* {currentCategory.name} */}
+        {/* <Swiper
           spaceBetween={300}
           slidesPerView={1}
           onSlideChange={(data) => {
@@ -60,7 +68,7 @@ const Team = () => {
               </s.StyledDotItem>
             );
           })}
-        </s.StyledDotsList>
+        </s.StyledDotsList> */}
       </div>
     </s.StyledContainer>
   );
